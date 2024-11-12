@@ -24,6 +24,13 @@ export function Home() {
             >
               Task List
             </Navbar.Link>
+            <Navbar.Link
+              as={Link}
+              to="/register"
+              className="text-lg font-semibold text-gray-700 hover:bg-blue-100 rounded-md px-4 py-2 transition duration-200"
+            >
+              Register
+            </Navbar.Link>
           </div>
         </Navbar.Collapse>
       </Navbar>
@@ -37,7 +44,6 @@ export function Home() {
         >
           View Task List
         </Link>
-        <Button color="blue">Register</Button>
       </div>
     </div>
   );
