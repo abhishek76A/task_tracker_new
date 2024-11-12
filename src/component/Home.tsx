@@ -26,7 +26,7 @@ export function Home() {
             </Navbar.Link>
             <Navbar.Link
               as={Link}
-              to="/tasks"
+              to="/register"
               className="text-lg font-semibold text-gray-700 hover:bg-blue-100 rounded-md px-4 py-2 transition duration-200"
             >
               Register

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Table, Modal } from "flowbite-react";
 import { tasks } from "./taskData"; 
 
-
+// Define the Task type or import it if it exists in taskData
 type Task = {
   id: number;
   name: string;
@@ -14,7 +14,7 @@ export function TaskList() {
   const tasksPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [selectedTask, setSelectedTask] = useState<Task | null>(null); 
+  const [selectedTask, setSelectedTask] = useState<Task | null>(null); // Define Task type
 
   const currentTasks = tasks.slice(
     (currentPage - 1) * tasksPerPage,
@@ -22,8 +22,8 @@ export function TaskList() {
   );
   const totalPages = Math.ceil(tasks.length / tasksPerPage);
 
-  
-  const handleTaskClick = (task: Task) => { 
+  // Function to handle clicking a task row to open dialog
+  const handleTaskClick = (task: Task) => { // Specify Task type for 'task'
     setSelectedTask(task);
     setIsDialogOpen(true);
   };
@@ -58,7 +58,7 @@ export function TaskList() {
         </Table.Body>
       </Table> 
       
-
+      {/* Pagination Controls */}
       <div className="flex justify-center mt-4 space-x-2">
         <button
           onClick={() => setCurrentPage((page) => Math.max(page - 1, 1))}
@@ -89,7 +89,7 @@ export function TaskList() {
         </button>
       </div>
 
-      
+      {/* Dialog for Task Details */}
       <Modal show={isDialogOpen} onClose={() => setIsDialogOpen(false)}>
         <Modal.Header>
           {selectedTask?.name}
